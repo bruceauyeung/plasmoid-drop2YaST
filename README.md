@@ -1,0 +1,2 @@
+plasmoid-drop2YaST
+==================
