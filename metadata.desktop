@@ -1,14 +1,14 @@
 [Desktop Entry]
 Name=plasmoid-drop2YaST
-Comment=this plasmoid helps you install packages directly from openSUSE ymp files, all you need to do is dropping a ymp file link onto this plasmoid.
-Icon=chronometer
+Comment=this plasmoid helps you install packages directly from openSUSE ymp files either from local file system or from an internet url, all you need to do is dropping a ymp file link onto this plasmoid.
+Icon=yast-mascot
 
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
-X-Plasma-DefaultSize=200,100
+X-Plasma-DefaultSize=240,100
 X-Plasma-RequiredExtensions=LaunchApp
-X-KDE-PluginInfo-Author=ouyang qinhua
-X-KDE-PluginInfo-Email=bruce.oy@gmail.com
+X-KDE-PluginInfo-Author=Bruce Auyeung
+X-KDE-PluginInfo-Email=bruce.auyeung@yahoo.com
 X-KDE-PluginInfo-Website=http://suselinks.us/
 X-KDE-PluginInfo-Category=Utilities
 X-KDE-PluginInfo-Name=us.suselinks.plasmoid.drop2YaST
