@@ -1,6 +1,20 @@
 String.prototype.trim = function() {
     return this.replace(/^\s+|\s+$/g,"");
 }
+String.prototype.startsWith = function (str){
+    return this.slice(0, str.length) == str;
+};
+String.prototype.startsWithIgnoreCase = function (str){
+    str = str.toLowerCase();
+    return this.toLowerCase().slice(0, str.length) == str;
+};
+String.prototype.endsWith = function (str){
+    return this.slice(-str.length) == str;
+};
+String.prototype.endsWithIgnoreCase = function (str){
+    str = str.toLowerCase();
+    return this.toLowerCase().slice(-str.length) == str;
+};
 Array.prototype.contains = function(v) {
   return this.indexOf(v) > -1;
 }
