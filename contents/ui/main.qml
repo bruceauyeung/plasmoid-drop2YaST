@@ -57,12 +57,12 @@ Rectangle {
                             var tempYmp = Utils.getTempFile(".ymp");
                             Utils.writeToFile(fileContent, tempYmp);
                             if(plasmoid.runCommand("sh", ["-c", "xdg-open " + tempYmp])){
-                                Log.trace("one-click-installer started, <br>drop a ymp file link here...");
-                                board.text="one-click-installer started, <br>drop a ymp file link here...";  
+                                Log.trace("One-Click-Installer started, <br>drop a ymp file link here...");
+                                board.text="One-Click-Installer started, <br>drop a ymp file link here...";  
                                 board.wrapMode=Text.WordWrap;
                             }else{
-                                Log.trace("failed to start one-click-installer.");
-                                board.text="failed to start one-click-installer.";                                   
+                                Log.trace("failed to start One-Click-Installer.");
+                                board.text="failed to start One-Click-Installer.";                                   
                             }
                         }else{
                             Log.trace("invalid ymp file.");

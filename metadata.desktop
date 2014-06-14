@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=plasmoid-drop2YaST
-Comment=this plasmoid helps you install packages directly from openSUSE ymp files either from local file system or from an internet url, all you need to do is dropping a ymp file link onto this plasmoid.
+Comment=this plasmoid helps you install packages directly from openSUSE ymp files either from local file system or from an internet url, all you need to do is dropping a ymp file link onto this plasmoid. this plasmoid is especially useful for chrome / chromium users because chromium-based web browsers will display ymp file's content directly instead of prompting to save or open it with YaST One-Click-Installer.
 Icon=yast-mascot
 
 X-Plasma-API=declarativeappletscript
