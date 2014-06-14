@@ -5,10 +5,10 @@ import "../code/utils.js" as Utils
 
 Rectangle {
     
-     width: 200
+     width: 240
      height: 100
-     color: "white"
-     border.color: "grey"
+     color: "transparent"
+     border.color: "transparent"
      border.width: 1
      radius: 1
      smooth: true
@@ -16,6 +16,9 @@ Rectangle {
         id: board
         property int minimumWidth: paintedWidth
         property int minimumHeight: paintedHeight
+        color:"red"
+        textFormat:Text.StyledText
+        wrapMode:Text.WordWrap
         text: "drop a ymp file link here...";
     }     
      DropArea {
@@ -37,6 +40,10 @@ Rectangle {
                     Log.trace("content-type : " + ctype);
                     if(ympContentTypes.containsIgnoreCase(ctype)){
                         isYmpFile=true;
+                    }else{
+                        // this line code cause plasma-desktop crashed.
+                        // xhr.abort();
+                        
                     }
                     
                 } else if (xhr.readyState == XMLHttpRequest.DONE) {
@@ -44,27 +51,33 @@ Rectangle {
                     {
                         Log.trace("downloading finished...");
                         board.text="downloading finished...";
-                        //var fileContent = xhr.responseXML.xhrumentElement;
-                        var fileContent = xhr.responseText;
                         if(isYmpFile){
                             Log.trace("valid ymp file.");
-                            
+                            var fileContent = xhr.responseText;
                             var tempYmp = Utils.getTempFile(".ymp");
                             Utils.writeToFile(fileContent, tempYmp);
-                            plasmoid.runCommand("sh", ["-c", "xdg-open " + tempYmp]);
-                            board.text="drop a ymp file link here...";
+                            if(plasmoid.runCommand("sh", ["-c", "xdg-open " + tempYmp])){
+                                Log.trace("one-click-installer started, <br>drop a ymp file link here...");
+                                board.text="one-click-installer started, <br>drop a ymp file link here...";  
+                                board.wrapMode=Text.WordWrap;
+                            }else{
+                                Log.trace("failed to start one-click-installer.");
+                                board.text="failed to start one-click-installer.";                                   
+                            }
                         }else{
                             Log.trace("invalid ymp file.");
+                            board.text="invalid ymp file.";                            
                         }
                     }
                     else
                     {
                         Log.trace("http request error : " + xhr.status);
+
                     }                    
                 }
             }
 
-            xhr.open("GET", event.mimeData.url);
+            xhr.open("GET", event.mimeData.url, true);
             xhr.send(); 
             Log.trace("downloading started...");
             board.text="downloading started...";
