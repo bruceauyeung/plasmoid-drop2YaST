@@ -4,8 +4,10 @@ this plasmoid helps you install packages directly from openSUSE ymp files either
 
 
 installation:
-1, download the file plasmoid-drop2YaST.plasmoid and save it to any directory you like.
-2, run the following command to install this plasmoid:
+
+0. download the file plasmoid-drop2YaST.plasmoid and save it to any directory you like.
+0. run the following command to install this plasmoid:
+
 ~~~sh
 plasmapkg -i /path/to/plasmoid-drop2YaST.plasmoid
 ~~~
