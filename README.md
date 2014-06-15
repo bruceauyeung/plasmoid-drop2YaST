@@ -16,5 +16,5 @@ plasmapkg -u /path/to/plasmoid-drop2YaST.plasmoid
 ~~~
 then remove this plasmoid from panel and add it again.
 
-video for installation , how to add plasmoid, how to use :
+video for installation , how to add plasmoid, how to use :    
 http://v.qq.com/page/p/r/n/p0130b494rn.html
